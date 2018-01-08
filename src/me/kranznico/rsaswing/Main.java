@@ -119,7 +119,7 @@ public class Main extends JFrame {
 		contentPane.add(lblE);
 		
 		eTextField = new JTextField();
-		eTextField.setBounds(482, 31, 306, 20);
+		eTextField.setBounds(482, 61, 306, 20);
 		contentPane.add(eTextField);
 		eTextField.setColumns(10);
 
@@ -173,7 +173,7 @@ public class Main extends JFrame {
 		contentPane.add(phiLabel);
 		
 		phiTextField = new JTextField();
-		phiTextField.setBounds(482, 61, 306, 20);
+		phiTextField.setBounds(482, 31, 306, 20);
 		contentPane.add(phiTextField);
 		phiTextField.setColumns(10);
 		contentPane.add(btnGenerateprimebutton);
