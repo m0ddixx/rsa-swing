@@ -12,13 +12,13 @@ public class RSA {
 	private BigInteger e = null;
 	private BigInteger phi = null;
 	private BigInteger d = null;
-	
-//	public static void main(String args[])
-//	{
-//		RSA rsa = new RSA(new BigInteger("5915587277"),new BigInteger("48112959837082048697"));
-//		rsa.decrypt(rsa.encrypt("NSA better watch out! "));
-//	}
-	
+
+	//	public static void main(String args[])
+	//	{
+	//		RSA rsa = new RSA(new BigInteger("5915587277"),new BigInteger("48112959837082048697"));
+	//		rsa.decrypt(rsa.encrypt("NSA better watch out! "));
+	//	}
+
 	/**
 	 * Erstellt ein RSA-Modul mit zufälligen Primzahlen und zufälligem E
 	 * 
@@ -83,6 +83,32 @@ public class RSA {
 	 * @param message Eine beliebige Nachricht.
 	 * @return Eine verschlüsselte Nachricht.
 	 */
+
+	public String encryptBlock(String message)
+	{
+
+		String ciphertext = "";
+		String[] sa = message.split("(?<=\\G...)");
+		BigInteger[] bia = new BigInteger[sa.length*3];
+		char[] saca = new char[3];
+		int count = 0;
+		for(int i = 0; i < sa.length; i++)
+		{
+			char[] ca = sa[i].toCharArray();
+			for(int x = 0; x < ca.length; x++)
+			{
+				BigInteger v = new BigInteger(Integer.toBinaryString(ca[x]));
+				ciphertext += (v.modPow(e, n).toString() + " ");
+			}
+		}
+		return ciphertext;
+	}
+
+	public String decryptBlock(String message)
+	{
+		return null;
+	}
+	
 	public String encrypt(String message)
 	{
 		String ciphertext = "";

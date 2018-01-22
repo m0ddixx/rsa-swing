@@ -206,7 +206,7 @@ public class Main extends JFrame {
 		btnEncrypt.addActionListener(new ActionListener() {
 			@Override
 			public void actionPerformed(ActionEvent e) {
-				cipherTextArea.setText(rsamodule.encrypt(clearTextArea.getText()));
+				cipherTextArea.setText(rsamodule.encryptBlock(clearTextArea.getText()));
 			}
 		});
 		contentPane.add(btnEncrypt);
